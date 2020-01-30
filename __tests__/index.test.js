@@ -1,18 +1,20 @@
-import { readFileSync } from 'fs';
+import fs from 'fs';
 import genDiff from '../src';
 
-const result = readFileSync(`${__dirname}/__fixtures__/result.txt`, 'utf-8');
+describe('genDiff', () => {
+  const pathToFile1 = (ext) => `${__dirname}/__fixtures__/before.${ext}`;
+  const pathToFile2 = (ext) => `${__dirname}/__fixtures__/after.${ext}`;
+  const result = fs.readFileSync(`${__dirname}/__fixtures__/result.txt`, 'utf-8');
 
-test('JSON', () => {
-  const path1 = `${__dirname}/__fixtures__/before.json`;
-  const path2 = `${__dirname}/__fixtures__/after.json`;
+  test('json', () => {
+    expect(genDiff(pathToFile1('json'), pathToFile2('json'))).toMatch(result);
+  });
 
-  expect(genDiff(path1, path2)).toMatch(result);
-});
+  test('yaml', () => {
+    expect(genDiff(pathToFile1('yml'), pathToFile2('yml'))).toMatch(result);
+  });
 
-test('YML', () => {
-  const path1 = `${__dirname}/__fixtures__/before.yml`;
-  const path2 = `${__dirname}/__fixtures__/after.yml`;
-
-  expect(genDiff(path1, path2)).toMatch(result);
+  test('ini', () => {
+    expect(genDiff(pathToFile1('ini'), pathToFile2('ini'))).toMatch(result);
+  });
 });
