@@ -11,3 +11,7 @@ JSON:
 YAML:
 
 [![asciicast](https://asciinema.org/a/nmpcrwLjgUs7zljDKSC0V3PCw.svg)](https://asciinema.org/a/nmpcrwLjgUs7zljDKSC0V3PCw)
+
+INI:
+
+[![asciicast](https://asciinema.org/a/HJjdYyVzB7bk2wHANkdSbHhcw.svg)](https://asciinema.org/a/HJjdYyVzB7bk2wHANkdSbHhcw)
