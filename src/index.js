@@ -1,5 +1,5 @@
-import { readFileSync } from 'fs';
 import _ from 'lodash';
+import parse from './parsers';
 
 const getDiff = (obj1, obj2) => {
   const keys = _.uniq(Object.keys(obj1).concat(Object.keys(obj2)));
@@ -22,10 +22,6 @@ const getDiff = (obj1, obj2) => {
   return `{\n${result.join('\n')}\n}`;
 };
 
-export default (pathToFile1, pathToFile2) => {
-  const fileContent1 = readFileSync(pathToFile1);
-  const fileContent2 = readFileSync(pathToFile2);
-  const obj1 = JSON.parse(fileContent1);
-  const obj2 = JSON.parse(fileContent2);
-  return getDiff(obj1, obj2);
-};
+export default (pathToFile1, pathToFile2) => (
+  getDiff(parse(pathToFile1), parse(pathToFile2))
+);
