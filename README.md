@@ -6,12 +6,12 @@
 
 JSON:
 
-[![asciicast](https://asciinema.org/a/qltNTmA5rquTojLPkUX4SpWlS.svg)](https://asciinema.org/a/qltNTmA5rquTojLPkUX4SpWlS)
+[![asciicast](https://asciinema.org/a/BXF7Dadxc0QJzlotlopwpqPHg.svg)](https://asciinema.org/a/BXF7Dadxc0QJzlotlopwpqPHg)
 
 YAML:
 
-[![asciicast](https://asciinema.org/a/nmpcrwLjgUs7zljDKSC0V3PCw.svg)](https://asciinema.org/a/nmpcrwLjgUs7zljDKSC0V3PCw)
+[![asciicast](https://asciinema.org/a/gjRNkpwonsHB56wyLKNAZAqsn.svg)](https://asciinema.org/a/gjRNkpwonsHB56wyLKNAZAqsn)
 
 INI:
 
-[![asciicast](https://asciinema.org/a/HJjdYyVzB7bk2wHANkdSbHhcw.svg)](https://asciinema.org/a/HJjdYyVzB7bk2wHANkdSbHhcw)
+[![asciicast](https://asciinema.org/a/Z3LHflp6FvIL9zNv0wBghS5u3.svg)](https://asciinema.org/a/Z3LHflp6FvIL9zNv0wBghS5u3)
