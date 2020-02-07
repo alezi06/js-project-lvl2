@@ -7,14 +7,14 @@ describe('genDiff', () => {
   const result = fs.readFileSync(`${__dirname}/__fixtures__/result.txt`, 'utf-8');
 
   test('json', () => {
-    expect(genDiff(pathToFile1('json'), pathToFile2('json'))).toMatch(result);
+    expect(genDiff(pathToFile1('json'), pathToFile2('json'))).toEqual(result);
   });
 
   test('yaml', () => {
-    expect(genDiff(pathToFile1('yml'), pathToFile2('yml'))).toMatch(result);
+    expect(genDiff(pathToFile1('yml'), pathToFile2('yml'))).toEqual(result);
   });
 
   test('ini', () => {
-    expect(genDiff(pathToFile1('ini'), pathToFile2('ini'))).toMatch(result);
+    expect(genDiff(pathToFile1('ini'), pathToFile2('ini'))).toEqual(result);
   });
 });
