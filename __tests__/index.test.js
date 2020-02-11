@@ -2,19 +2,49 @@ import fs from 'fs';
 import genDiff from '../src';
 
 describe('genDiff', () => {
-  const pathToFile1 = (ext) => `${__dirname}/__fixtures__/before.${ext}`;
-  const pathToFile2 = (ext) => `${__dirname}/__fixtures__/after.${ext}`;
-  const result = fs.readFileSync(`${__dirname}/__fixtures__/result.txt`, 'utf-8');
+  const getPathToFile1 = (ext) => `${__dirname}/__fixtures__/before.${ext}`;
+  const getPathToFile2 = (ext) => `${__dirname}/__fixtures__/after.${ext}`;
+  const getResult = (file) => fs.readFileSync(`${__dirname}/__fixtures__/${file}`, 'utf-8');
 
-  test('json', () => {
-    expect(genDiff(pathToFile1('json'), pathToFile2('json'))).toEqual(result);
+  const pretty = getResult('pretty');
+  const plain = getResult('plain');
+
+  describe('json', () => {
+    const before = getPathToFile1('json');
+    const after = getPathToFile2('json');
+
+    test('to pretty', () => {
+      expect(genDiff(before, after, 'pretty')).toEqual(pretty);
+    });
+
+    test('to plain', () => {
+      expect(genDiff(before, after, 'plain')).toEqual(plain);
+    });
   });
 
-  test('yaml', () => {
-    expect(genDiff(pathToFile1('yml'), pathToFile2('yml'))).toEqual(result);
+  describe('yaml', () => {
+    const before = getPathToFile1('yml');
+    const after = getPathToFile2('yml');
+
+    test('to pretty', () => {
+      expect(genDiff(before, after, 'pretty')).toEqual(pretty);
+    });
+
+    test('to plain', () => {
+      expect(genDiff(before, after, 'plain')).toEqual(plain);
+    });
   });
 
-  test('ini', () => {
-    expect(genDiff(pathToFile1('ini'), pathToFile2('ini'))).toEqual(result);
+  describe('ini', () => {
+    const before = getPathToFile1('ini');
+    const after = getPathToFile2('ini');
+
+    test('to pretty', () => {
+      expect(genDiff(before, after, 'pretty')).toEqual(pretty);
+    });
+
+    test('to plain', () => {
+      expect(genDiff(before, after, 'plain')).toEqual(plain);
+    });
   });
 });
