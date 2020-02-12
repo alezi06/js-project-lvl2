@@ -4,13 +4,13 @@ import yaml from 'js-yaml';
 import ini from 'ini';
 
 const parser = {
-  '.ini': (data) => ini.parse(data),
-  '.yml': (data) => yaml.safeLoad(data),
-  '.json': (data) => JSON.parse(data),
+  ini: ini.parse,
+  yml: yaml.safeLoad,
+  json: JSON.parse,
 };
 
 export default (filepath) => {
   const content = fs.readFileSync(filepath, 'utf-8');
-  const extension = path.extname(filepath);
+  const extension = path.extname(filepath).slice(1);
   return parser[extension](content);
 };
