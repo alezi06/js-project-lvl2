@@ -8,6 +8,7 @@ describe('genDiff', () => {
 
   const pretty = getResult('pretty');
   const plain = getResult('plain');
+  const json = getResult('json');
 
   describe('json', () => {
     const before = getPathToFile1('json');
@@ -19,6 +20,10 @@ describe('genDiff', () => {
 
     test('to plain', () => {
       expect(genDiff(before, after, 'plain')).toEqual(plain);
+    });
+
+    test('to json', () => {
+      expect(genDiff(before, after, 'json')).toEqual(json);
     });
   });
 
@@ -33,6 +38,10 @@ describe('genDiff', () => {
     test('to plain', () => {
       expect(genDiff(before, after, 'plain')).toEqual(plain);
     });
+
+    test('to json', () => {
+      expect(genDiff(before, after, 'json')).toEqual(json);
+    });
   });
 
   describe('ini', () => {
@@ -45,6 +54,10 @@ describe('genDiff', () => {
 
     test('to plain', () => {
       expect(genDiff(before, after, 'plain')).toEqual(plain);
+    });
+
+    test('to json', () => {
+      expect(genDiff(before, after, 'json')).toEqual(json);
     });
   });
 });
