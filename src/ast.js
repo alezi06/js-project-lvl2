@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
 const buildAst = (before, after) => {
-  const keys = _.uniq(Object.keys(before).concat(Object.keys(after)));
+  const keys = _.union(_.keys(before), _.keys(after));
 
   return keys.map((key) => {
     if (_.has(before, key) && _.has(after, key)) {
-      if (before[key] instanceof Object && after[key] instanceof Object) {
+      if (_.isObject(before[key]) && _.isObject(after[key])) {
         return {
           key,
           type: 'parent',
