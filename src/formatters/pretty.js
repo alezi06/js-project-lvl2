@@ -3,11 +3,11 @@ import _ from 'lodash';
 const indent = (depth) => '  '.repeat(depth);
 
 const stringify = (value, depth) => {
-  if (value instanceof Object) {
-    const result = _.map(value, (v, k) => `${k}: ${v}`).join('\n');
-    return `{\n${indent(depth + 3)}${result}\n${indent(depth + 1)}}`;
+  if (!_.isObject(value)) {
+    return value;
   }
-  return value;
+  const result = _.map(value, (v, k) => `${k}: ${v}`).join('\n');
+  return `{\n${indent(depth + 3)}${result}\n${indent(depth + 1)}}`;
 };
 
 const render = (items, depth = 1) => {
